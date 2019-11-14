@@ -1,9 +1,9 @@
+group 'com.shengsiyuan'
+version '1.0'
 
 apply plugin: 'java'
 apply plugin: 'com.google.protobuf'
 
-group 'com.shengsiyuan'
-version '1.0'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -29,22 +29,27 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.10'
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.4'
     }
 }
 
 protobuf {
     protoc {
-        artifact = "com.google.protobuf:protoc:3.10.0"
+        artifact = "com.google.protobuf:protoc:3.2.0"
     }
     plugins {
         grpc {
-            artifact = 'io.grpc:protoc-gen-grpc-java:1.25.0'
+            artifact = 'io.grpc:protoc-gen-grpc-java:1.4.0'
         }
     }
+
+    generateProtoTasks.generatedFilesBaseDir = "src"
+
     generateProtoTasks {
         all()*.plugins {
-            grpc {}
+            grpc {
+                setOutputSubDir 'java'
+            }
         }
     }
 }
