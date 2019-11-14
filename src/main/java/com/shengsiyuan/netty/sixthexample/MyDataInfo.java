@@ -20,19 +20,23 @@ public final class MyDataInfo {
 
     /**
      * <code>required .com.shengsiyuan.protobuf.MyMessage.DataType data_type = 1;</code>
+     * @return Whether the dataType field is set.
      */
     boolean hasDataType();
     /**
      * <code>required .com.shengsiyuan.protobuf.MyMessage.DataType data_type = 1;</code>
+     * @return The dataType.
      */
     com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage.DataType getDataType();
 
     /**
      * <code>optional .com.shengsiyuan.protobuf.Person person = 2;</code>
+     * @return Whether the person field is set.
      */
     boolean hasPerson();
     /**
      * <code>optional .com.shengsiyuan.protobuf.Person person = 2;</code>
+     * @return The person.
      */
     com.shengsiyuan.netty.sixthexample.MyDataInfo.Person getPerson();
     /**
@@ -42,10 +46,12 @@ public final class MyDataInfo {
 
     /**
      * <code>optional .com.shengsiyuan.protobuf.Dog dog = 3;</code>
+     * @return Whether the dog field is set.
      */
     boolean hasDog();
     /**
      * <code>optional .com.shengsiyuan.protobuf.Dog dog = 3;</code>
+     * @return The dog.
      */
     com.shengsiyuan.netty.sixthexample.MyDataInfo.Dog getDog();
     /**
@@ -55,10 +61,12 @@ public final class MyDataInfo {
 
     /**
      * <code>optional .com.shengsiyuan.protobuf.Cat cat = 4;</code>
+     * @return Whether the cat field is set.
      */
     boolean hasCat();
     /**
      * <code>optional .com.shengsiyuan.protobuf.Cat cat = 4;</code>
+     * @return The cat.
      */
     com.shengsiyuan.netty.sixthexample.MyDataInfo.Cat getCat();
     /**
@@ -75,12 +83,20 @@ public final class MyDataInfo {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:com.shengsiyuan.protobuf.MyMessage)
       MyMessageOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use MyMessage.newBuilder() to construct.
     private MyMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private MyMessage() {
       dataType_ = 1;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MyMessage();
     }
 
     @java.lang.Override
@@ -93,6 +109,9 @@ public final class MyDataInfo {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -104,15 +123,9 @@ public final class MyDataInfo {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
+                @SuppressWarnings("deprecation")
               com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage.DataType value = com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage.DataType.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(1, rawValue);
@@ -164,6 +177,13 @@ public final class MyDataInfo {
               dataBodyCase_ = 4;
               break;
             }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -181,6 +201,7 @@ public final class MyDataInfo {
       return com.shengsiyuan.netty.sixthexample.MyDataInfo.internal_static_com_shengsiyuan_protobuf_MyMessage_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.shengsiyuan.netty.sixthexample.MyDataInfo.internal_static_com_shengsiyuan_protobuf_MyMessage_fieldAccessorTable
@@ -226,6 +247,8 @@ public final class MyDataInfo {
       }
 
       /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -233,6 +256,10 @@ public final class MyDataInfo {
         return forNumber(value);
       }
 
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
       public static DataType forNumber(int value) {
         switch (value) {
           case 1: return PersonType;
@@ -291,7 +318,8 @@ public final class MyDataInfo {
     private int dataBodyCase_ = 0;
     private java.lang.Object dataBody_;
     public enum DataBodyCase
-        implements com.google.protobuf.Internal.EnumLite {
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       PERSON(2),
       DOG(3),
       CAT(4),
@@ -301,6 +329,8 @@ public final class MyDataInfo {
         this.value = value;
       }
       /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
@@ -332,14 +362,17 @@ public final class MyDataInfo {
     private int dataType_;
     /**
      * <code>required .com.shengsiyuan.protobuf.MyMessage.DataType data_type = 1;</code>
+     * @return Whether the dataType field is set.
      */
     public boolean hasDataType() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>required .com.shengsiyuan.protobuf.MyMessage.DataType data_type = 1;</code>
+     * @return The dataType.
      */
     public com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage.DataType getDataType() {
+      @SuppressWarnings("deprecation")
       com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage.DataType result = com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage.DataType.valueOf(dataType_);
       return result == null ? com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage.DataType.PersonType : result;
     }
@@ -347,12 +380,14 @@ public final class MyDataInfo {
     public static final int PERSON_FIELD_NUMBER = 2;
     /**
      * <code>optional .com.shengsiyuan.protobuf.Person person = 2;</code>
+     * @return Whether the person field is set.
      */
     public boolean hasPerson() {
       return dataBodyCase_ == 2;
     }
     /**
      * <code>optional .com.shengsiyuan.protobuf.Person person = 2;</code>
+     * @return The person.
      */
     public com.shengsiyuan.netty.sixthexample.MyDataInfo.Person getPerson() {
       if (dataBodyCase_ == 2) {
@@ -373,12 +408,14 @@ public final class MyDataInfo {
     public static final int DOG_FIELD_NUMBER = 3;
     /**
      * <code>optional .com.shengsiyuan.protobuf.Dog dog = 3;</code>
+     * @return Whether the dog field is set.
      */
     public boolean hasDog() {
       return dataBodyCase_ == 3;
     }
     /**
      * <code>optional .com.shengsiyuan.protobuf.Dog dog = 3;</code>
+     * @return The dog.
      */
     public com.shengsiyuan.netty.sixthexample.MyDataInfo.Dog getDog() {
       if (dataBodyCase_ == 3) {
@@ -399,12 +436,14 @@ public final class MyDataInfo {
     public static final int CAT_FIELD_NUMBER = 4;
     /**
      * <code>optional .com.shengsiyuan.protobuf.Cat cat = 4;</code>
+     * @return Whether the cat field is set.
      */
     public boolean hasCat() {
       return dataBodyCase_ == 4;
     }
     /**
      * <code>optional .com.shengsiyuan.protobuf.Cat cat = 4;</code>
+     * @return The cat.
      */
     public com.shengsiyuan.netty.sixthexample.MyDataInfo.Cat getCat() {
       if (dataBodyCase_ == 4) {
@@ -423,6 +462,7 @@ public final class MyDataInfo {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -436,9 +476,10 @@ public final class MyDataInfo {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeEnum(1, dataType_);
       }
       if (dataBodyCase_ == 2) {
@@ -453,12 +494,13 @@ public final class MyDataInfo {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, dataType_);
       }
@@ -479,7 +521,6 @@ public final class MyDataInfo {
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -490,32 +531,29 @@ public final class MyDataInfo {
       }
       com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage other = (com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage) obj;
 
-      boolean result = true;
-      result = result && (hasDataType() == other.hasDataType());
+      if (hasDataType() != other.hasDataType()) return false;
       if (hasDataType()) {
-        result = result && dataType_ == other.dataType_;
+        if (dataType_ != other.dataType_) return false;
       }
-      result = result && getDataBodyCase().equals(
-          other.getDataBodyCase());
-      if (!result) return false;
+      if (!getDataBodyCase().equals(other.getDataBodyCase())) return false;
       switch (dataBodyCase_) {
         case 2:
-          result = result && getPerson()
-              .equals(other.getPerson());
+          if (!getPerson()
+              .equals(other.getPerson())) return false;
           break;
         case 3:
-          result = result && getDog()
-              .equals(other.getDog());
+          if (!getDog()
+              .equals(other.getDog())) return false;
           break;
         case 4:
-          result = result && getCat()
-              .equals(other.getCat());
+          if (!getCat()
+              .equals(other.getCat())) return false;
           break;
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -620,6 +658,7 @@ public final class MyDataInfo {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -627,6 +666,7 @@ public final class MyDataInfo {
     public static Builder newBuilder(com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -650,6 +690,7 @@ public final class MyDataInfo {
         return com.shengsiyuan.netty.sixthexample.MyDataInfo.internal_static_com_shengsiyuan_protobuf_MyMessage_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.shengsiyuan.netty.sixthexample.MyDataInfo.internal_static_com_shengsiyuan_protobuf_MyMessage_fieldAccessorTable
@@ -672,6 +713,7 @@ public final class MyDataInfo {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         dataType_ = 1;
@@ -681,15 +723,18 @@ public final class MyDataInfo {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.shengsiyuan.netty.sixthexample.MyDataInfo.internal_static_com_shengsiyuan_protobuf_MyMessage_descriptor;
       }
 
+      @java.lang.Override
       public com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage getDefaultInstanceForType() {
         return com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage build() {
         com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage result = buildPartial();
         if (!result.isInitialized()) {
@@ -698,11 +743,12 @@ public final class MyDataInfo {
         return result;
       }
 
+      @java.lang.Override
       public com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage buildPartial() {
         com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage result = new com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.dataType_ = dataType_;
@@ -733,32 +779,39 @@ public final class MyDataInfo {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage) {
           return mergeFrom((com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage)other);
@@ -795,6 +848,7 @@ public final class MyDataInfo {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         if (!hasDataType()) {
           return false;
@@ -802,6 +856,7 @@ public final class MyDataInfo {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -839,19 +894,24 @@ public final class MyDataInfo {
       private int dataType_ = 1;
       /**
        * <code>required .com.shengsiyuan.protobuf.MyMessage.DataType data_type = 1;</code>
+       * @return Whether the dataType field is set.
        */
       public boolean hasDataType() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>required .com.shengsiyuan.protobuf.MyMessage.DataType data_type = 1;</code>
+       * @return The dataType.
        */
       public com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage.DataType getDataType() {
+        @SuppressWarnings("deprecation")
         com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage.DataType result = com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage.DataType.valueOf(dataType_);
         return result == null ? com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage.DataType.PersonType : result;
       }
       /**
        * <code>required .com.shengsiyuan.protobuf.MyMessage.DataType data_type = 1;</code>
+       * @param value The dataType to set.
+       * @return This builder for chaining.
        */
       public Builder setDataType(com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage.DataType value) {
         if (value == null) {
@@ -864,6 +924,7 @@ public final class MyDataInfo {
       }
       /**
        * <code>required .com.shengsiyuan.protobuf.MyMessage.DataType data_type = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearDataType() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -876,12 +937,14 @@ public final class MyDataInfo {
           com.shengsiyuan.netty.sixthexample.MyDataInfo.Person, com.shengsiyuan.netty.sixthexample.MyDataInfo.Person.Builder, com.shengsiyuan.netty.sixthexample.MyDataInfo.PersonOrBuilder> personBuilder_;
       /**
        * <code>optional .com.shengsiyuan.protobuf.Person person = 2;</code>
+       * @return Whether the person field is set.
        */
       public boolean hasPerson() {
         return dataBodyCase_ == 2;
       }
       /**
        * <code>optional .com.shengsiyuan.protobuf.Person person = 2;</code>
+       * @return The person.
        */
       public com.shengsiyuan.netty.sixthexample.MyDataInfo.Person getPerson() {
         if (personBuilder_ == null) {
@@ -1012,12 +1075,14 @@ public final class MyDataInfo {
           com.shengsiyuan.netty.sixthexample.MyDataInfo.Dog, com.shengsiyuan.netty.sixthexample.MyDataInfo.Dog.Builder, com.shengsiyuan.netty.sixthexample.MyDataInfo.DogOrBuilder> dogBuilder_;
       /**
        * <code>optional .com.shengsiyuan.protobuf.Dog dog = 3;</code>
+       * @return Whether the dog field is set.
        */
       public boolean hasDog() {
         return dataBodyCase_ == 3;
       }
       /**
        * <code>optional .com.shengsiyuan.protobuf.Dog dog = 3;</code>
+       * @return The dog.
        */
       public com.shengsiyuan.netty.sixthexample.MyDataInfo.Dog getDog() {
         if (dogBuilder_ == null) {
@@ -1148,12 +1213,14 @@ public final class MyDataInfo {
           com.shengsiyuan.netty.sixthexample.MyDataInfo.Cat, com.shengsiyuan.netty.sixthexample.MyDataInfo.Cat.Builder, com.shengsiyuan.netty.sixthexample.MyDataInfo.CatOrBuilder> catBuilder_;
       /**
        * <code>optional .com.shengsiyuan.protobuf.Cat cat = 4;</code>
+       * @return Whether the cat field is set.
        */
       public boolean hasCat() {
         return dataBodyCase_ == 4;
       }
       /**
        * <code>optional .com.shengsiyuan.protobuf.Cat cat = 4;</code>
+       * @return The cat.
        */
       public com.shengsiyuan.netty.sixthexample.MyDataInfo.Cat getCat() {
         if (catBuilder_ == null) {
@@ -1279,11 +1346,13 @@ public final class MyDataInfo {
         onChanged();;
         return catBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -1305,11 +1374,12 @@ public final class MyDataInfo {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<MyMessage>
         PARSER = new com.google.protobuf.AbstractParser<MyMessage>() {
+      @java.lang.Override
       public MyMessage parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MyMessage(input, extensionRegistry);
+        return new MyMessage(input, extensionRegistry);
       }
     };
 
@@ -1322,6 +1392,7 @@ public final class MyDataInfo {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.shengsiyuan.netty.sixthexample.MyDataInfo.MyMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1334,37 +1405,45 @@ public final class MyDataInfo {
 
     /**
      * <code>optional string name = 1;</code>
+     * @return Whether the name field is set.
      */
     boolean hasName();
     /**
      * <code>optional string name = 1;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>optional string name = 1;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
      * <code>optional int32 age = 2;</code>
+     * @return Whether the age field is set.
      */
     boolean hasAge();
     /**
      * <code>optional int32 age = 2;</code>
+     * @return The age.
      */
     int getAge();
 
     /**
      * <code>optional string address = 3;</code>
+     * @return Whether the address field is set.
      */
     boolean hasAddress();
     /**
      * <code>optional string address = 3;</code>
+     * @return The address.
      */
     java.lang.String getAddress();
     /**
      * <code>optional string address = 3;</code>
+     * @return The bytes for address.
      */
     com.google.protobuf.ByteString
         getAddressBytes();
@@ -1376,14 +1455,21 @@ public final class MyDataInfo {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:com.shengsiyuan.protobuf.Person)
       PersonOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Person.newBuilder() to construct.
     private Person(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private Person() {
       name_ = "";
-      age_ = 0;
       address_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Person();
     }
 
     @java.lang.Override
@@ -1396,6 +1482,9 @@ public final class MyDataInfo {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1407,13 +1496,6 @@ public final class MyDataInfo {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
@@ -1429,6 +1511,13 @@ public final class MyDataInfo {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
               address_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1448,6 +1537,7 @@ public final class MyDataInfo {
       return com.shengsiyuan.netty.sixthexample.MyDataInfo.internal_static_com_shengsiyuan_protobuf_Person_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.shengsiyuan.netty.sixthexample.MyDataInfo.internal_static_com_shengsiyuan_protobuf_Person_fieldAccessorTable
@@ -1460,12 +1550,14 @@ public final class MyDataInfo {
     private volatile java.lang.Object name_;
     /**
      * <code>optional string name = 1;</code>
+     * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>optional string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -1483,6 +1575,7 @@ public final class MyDataInfo {
     }
     /**
      * <code>optional string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -1502,12 +1595,14 @@ public final class MyDataInfo {
     private int age_;
     /**
      * <code>optional int32 age = 2;</code>
+     * @return Whether the age field is set.
      */
     public boolean hasAge() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>optional int32 age = 2;</code>
+     * @return The age.
      */
     public int getAge() {
       return age_;
@@ -1517,12 +1612,14 @@ public final class MyDataInfo {
     private volatile java.lang.Object address_;
     /**
      * <code>optional string address = 3;</code>
+     * @return Whether the address field is set.
      */
     public boolean hasAddress() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>optional string address = 3;</code>
+     * @return The address.
      */
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
@@ -1540,6 +1637,7 @@ public final class MyDataInfo {
     }
     /**
      * <code>optional string address = 3;</code>
+     * @return The bytes for address.
      */
     public com.google.protobuf.ByteString
         getAddressBytes() {
@@ -1556,6 +1654,7 @@ public final class MyDataInfo {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1565,33 +1664,35 @@ public final class MyDataInfo {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeInt32(2, age_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, address_);
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, age_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, address_);
       }
       size += unknownFields.getSerializedSize();
@@ -1599,7 +1700,6 @@ public final class MyDataInfo {
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1610,24 +1710,23 @@ public final class MyDataInfo {
       }
       com.shengsiyuan.netty.sixthexample.MyDataInfo.Person other = (com.shengsiyuan.netty.sixthexample.MyDataInfo.Person) obj;
 
-      boolean result = true;
-      result = result && (hasName() == other.hasName());
+      if (hasName() != other.hasName()) return false;
       if (hasName()) {
-        result = result && getName()
-            .equals(other.getName());
+        if (!getName()
+            .equals(other.getName())) return false;
       }
-      result = result && (hasAge() == other.hasAge());
+      if (hasAge() != other.hasAge()) return false;
       if (hasAge()) {
-        result = result && (getAge()
-            == other.getAge());
+        if (getAge()
+            != other.getAge()) return false;
       }
-      result = result && (hasAddress() == other.hasAddress());
+      if (hasAddress() != other.hasAddress()) return false;
       if (hasAddress()) {
-        result = result && getAddress()
-            .equals(other.getAddress());
+        if (!getAddress()
+            .equals(other.getAddress())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -1724,6 +1823,7 @@ public final class MyDataInfo {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1731,6 +1831,7 @@ public final class MyDataInfo {
     public static Builder newBuilder(com.shengsiyuan.netty.sixthexample.MyDataInfo.Person prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1754,6 +1855,7 @@ public final class MyDataInfo {
         return com.shengsiyuan.netty.sixthexample.MyDataInfo.internal_static_com_shengsiyuan_protobuf_Person_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.shengsiyuan.netty.sixthexample.MyDataInfo.internal_static_com_shengsiyuan_protobuf_Person_fieldAccessorTable
@@ -1776,6 +1878,7 @@ public final class MyDataInfo {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         name_ = "";
@@ -1787,15 +1890,18 @@ public final class MyDataInfo {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.shengsiyuan.netty.sixthexample.MyDataInfo.internal_static_com_shengsiyuan_protobuf_Person_descriptor;
       }
 
+      @java.lang.Override
       public com.shengsiyuan.netty.sixthexample.MyDataInfo.Person getDefaultInstanceForType() {
         return com.shengsiyuan.netty.sixthexample.MyDataInfo.Person.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.shengsiyuan.netty.sixthexample.MyDataInfo.Person build() {
         com.shengsiyuan.netty.sixthexample.MyDataInfo.Person result = buildPartial();
         if (!result.isInitialized()) {
@@ -1804,19 +1910,20 @@ public final class MyDataInfo {
         return result;
       }
 
+      @java.lang.Override
       public com.shengsiyuan.netty.sixthexample.MyDataInfo.Person buildPartial() {
         com.shengsiyuan.netty.sixthexample.MyDataInfo.Person result = new com.shengsiyuan.netty.sixthexample.MyDataInfo.Person(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.name_ = name_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.age_ = age_;
           to_bitField0_ |= 0x00000002;
         }
-        result.age_ = age_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           to_bitField0_ |= 0x00000004;
         }
         result.address_ = address_;
@@ -1825,32 +1932,39 @@ public final class MyDataInfo {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.shengsiyuan.netty.sixthexample.MyDataInfo.Person) {
           return mergeFrom((com.shengsiyuan.netty.sixthexample.MyDataInfo.Person)other);
@@ -1880,10 +1994,12 @@ public final class MyDataInfo {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1906,12 +2022,14 @@ public final class MyDataInfo {
       private java.lang.Object name_ = "";
       /**
        * <code>optional string name = 1;</code>
+       * @return Whether the name field is set.
        */
       public boolean hasName() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>optional string name = 1;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -1929,6 +2047,7 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional string name = 1;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -1945,6 +2064,8 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -1958,6 +2079,7 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional string name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1967,6 +2089,8 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1982,18 +2106,22 @@ public final class MyDataInfo {
       private int age_ ;
       /**
        * <code>optional int32 age = 2;</code>
+       * @return Whether the age field is set.
        */
       public boolean hasAge() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>optional int32 age = 2;</code>
+       * @return The age.
        */
       public int getAge() {
         return age_;
       }
       /**
        * <code>optional int32 age = 2;</code>
+       * @param value The age to set.
+       * @return This builder for chaining.
        */
       public Builder setAge(int value) {
         bitField0_ |= 0x00000002;
@@ -2003,6 +2131,7 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional int32 age = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAge() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -2014,12 +2143,14 @@ public final class MyDataInfo {
       private java.lang.Object address_ = "";
       /**
        * <code>optional string address = 3;</code>
+       * @return Whether the address field is set.
        */
       public boolean hasAddress() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>optional string address = 3;</code>
+       * @return The address.
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -2037,6 +2168,7 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional string address = 3;</code>
+       * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -2053,6 +2185,8 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional string address = 3;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -2066,6 +2200,7 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional string address = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAddress() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -2075,6 +2210,8 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional string address = 3;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -2086,11 +2223,13 @@ public final class MyDataInfo {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2112,11 +2251,12 @@ public final class MyDataInfo {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Person>
         PARSER = new com.google.protobuf.AbstractParser<Person>() {
+      @java.lang.Override
       public Person parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Person(input, extensionRegistry);
+        return new Person(input, extensionRegistry);
       }
     };
 
@@ -2129,6 +2269,7 @@ public final class MyDataInfo {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.shengsiyuan.netty.sixthexample.MyDataInfo.Person getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2141,24 +2282,29 @@ public final class MyDataInfo {
 
     /**
      * <code>optional string name = 1;</code>
+     * @return Whether the name field is set.
      */
     boolean hasName();
     /**
      * <code>optional string name = 1;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>optional string name = 1;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
      * <code>optional int32 age = 2;</code>
+     * @return Whether the age field is set.
      */
     boolean hasAge();
     /**
      * <code>optional int32 age = 2;</code>
+     * @return The age.
      */
     int getAge();
   }
@@ -2169,13 +2315,20 @@ public final class MyDataInfo {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:com.shengsiyuan.protobuf.Dog)
       DogOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Dog.newBuilder() to construct.
     private Dog(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private Dog() {
       name_ = "";
-      age_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Dog();
     }
 
     @java.lang.Override
@@ -2188,6 +2341,9 @@ public final class MyDataInfo {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2199,13 +2355,6 @@ public final class MyDataInfo {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
@@ -2215,6 +2364,13 @@ public final class MyDataInfo {
             case 16: {
               bitField0_ |= 0x00000002;
               age_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -2234,6 +2390,7 @@ public final class MyDataInfo {
       return com.shengsiyuan.netty.sixthexample.MyDataInfo.internal_static_com_shengsiyuan_protobuf_Dog_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.shengsiyuan.netty.sixthexample.MyDataInfo.internal_static_com_shengsiyuan_protobuf_Dog_fieldAccessorTable
@@ -2246,12 +2403,14 @@ public final class MyDataInfo {
     private volatile java.lang.Object name_;
     /**
      * <code>optional string name = 1;</code>
+     * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>optional string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -2269,6 +2428,7 @@ public final class MyDataInfo {
     }
     /**
      * <code>optional string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -2288,18 +2448,21 @@ public final class MyDataInfo {
     private int age_;
     /**
      * <code>optional int32 age = 2;</code>
+     * @return Whether the age field is set.
      */
     public boolean hasAge() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>optional int32 age = 2;</code>
+     * @return The age.
      */
     public int getAge() {
       return age_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2309,26 +2472,28 @@ public final class MyDataInfo {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeInt32(2, age_);
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, age_);
       }
@@ -2337,7 +2502,6 @@ public final class MyDataInfo {
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2348,19 +2512,18 @@ public final class MyDataInfo {
       }
       com.shengsiyuan.netty.sixthexample.MyDataInfo.Dog other = (com.shengsiyuan.netty.sixthexample.MyDataInfo.Dog) obj;
 
-      boolean result = true;
-      result = result && (hasName() == other.hasName());
+      if (hasName() != other.hasName()) return false;
       if (hasName()) {
-        result = result && getName()
-            .equals(other.getName());
+        if (!getName()
+            .equals(other.getName())) return false;
       }
-      result = result && (hasAge() == other.hasAge());
+      if (hasAge() != other.hasAge()) return false;
       if (hasAge()) {
-        result = result && (getAge()
-            == other.getAge());
+        if (getAge()
+            != other.getAge()) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -2453,6 +2616,7 @@ public final class MyDataInfo {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2460,6 +2624,7 @@ public final class MyDataInfo {
     public static Builder newBuilder(com.shengsiyuan.netty.sixthexample.MyDataInfo.Dog prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2483,6 +2648,7 @@ public final class MyDataInfo {
         return com.shengsiyuan.netty.sixthexample.MyDataInfo.internal_static_com_shengsiyuan_protobuf_Dog_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.shengsiyuan.netty.sixthexample.MyDataInfo.internal_static_com_shengsiyuan_protobuf_Dog_fieldAccessorTable
@@ -2505,6 +2671,7 @@ public final class MyDataInfo {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         name_ = "";
@@ -2514,15 +2681,18 @@ public final class MyDataInfo {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.shengsiyuan.netty.sixthexample.MyDataInfo.internal_static_com_shengsiyuan_protobuf_Dog_descriptor;
       }
 
+      @java.lang.Override
       public com.shengsiyuan.netty.sixthexample.MyDataInfo.Dog getDefaultInstanceForType() {
         return com.shengsiyuan.netty.sixthexample.MyDataInfo.Dog.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.shengsiyuan.netty.sixthexample.MyDataInfo.Dog build() {
         com.shengsiyuan.netty.sixthexample.MyDataInfo.Dog result = buildPartial();
         if (!result.isInitialized()) {
@@ -2531,49 +2701,57 @@ public final class MyDataInfo {
         return result;
       }
 
+      @java.lang.Override
       public com.shengsiyuan.netty.sixthexample.MyDataInfo.Dog buildPartial() {
         com.shengsiyuan.netty.sixthexample.MyDataInfo.Dog result = new com.shengsiyuan.netty.sixthexample.MyDataInfo.Dog(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.name_ = name_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.age_ = age_;
           to_bitField0_ |= 0x00000002;
         }
-        result.age_ = age_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.shengsiyuan.netty.sixthexample.MyDataInfo.Dog) {
           return mergeFrom((com.shengsiyuan.netty.sixthexample.MyDataInfo.Dog)other);
@@ -2598,10 +2776,12 @@ public final class MyDataInfo {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2624,12 +2804,14 @@ public final class MyDataInfo {
       private java.lang.Object name_ = "";
       /**
        * <code>optional string name = 1;</code>
+       * @return Whether the name field is set.
        */
       public boolean hasName() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>optional string name = 1;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -2647,6 +2829,7 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional string name = 1;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -2663,6 +2846,8 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -2676,6 +2861,7 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional string name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -2685,6 +2871,8 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -2700,18 +2888,22 @@ public final class MyDataInfo {
       private int age_ ;
       /**
        * <code>optional int32 age = 2;</code>
+       * @return Whether the age field is set.
        */
       public boolean hasAge() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>optional int32 age = 2;</code>
+       * @return The age.
        */
       public int getAge() {
         return age_;
       }
       /**
        * <code>optional int32 age = 2;</code>
+       * @param value The age to set.
+       * @return This builder for chaining.
        */
       public Builder setAge(int value) {
         bitField0_ |= 0x00000002;
@@ -2721,6 +2913,7 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional int32 age = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAge() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -2728,11 +2921,13 @@ public final class MyDataInfo {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -2754,11 +2949,12 @@ public final class MyDataInfo {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Dog>
         PARSER = new com.google.protobuf.AbstractParser<Dog>() {
+      @java.lang.Override
       public Dog parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Dog(input, extensionRegistry);
+        return new Dog(input, extensionRegistry);
       }
     };
 
@@ -2771,6 +2967,7 @@ public final class MyDataInfo {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.shengsiyuan.netty.sixthexample.MyDataInfo.Dog getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2783,28 +2980,34 @@ public final class MyDataInfo {
 
     /**
      * <code>optional string name = 1;</code>
+     * @return Whether the name field is set.
      */
     boolean hasName();
     /**
      * <code>optional string name = 1;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
      * <code>optional string name = 1;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
      * <code>optional string city = 2;</code>
+     * @return Whether the city field is set.
      */
     boolean hasCity();
     /**
      * <code>optional string city = 2;</code>
+     * @return The city.
      */
     java.lang.String getCity();
     /**
      * <code>optional string city = 2;</code>
+     * @return The bytes for city.
      */
     com.google.protobuf.ByteString
         getCityBytes();
@@ -2816,6 +3019,7 @@ public final class MyDataInfo {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:com.shengsiyuan.protobuf.Cat)
       CatOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Cat.newBuilder() to construct.
     private Cat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2823,6 +3027,13 @@ public final class MyDataInfo {
     private Cat() {
       name_ = "";
       city_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Cat();
     }
 
     @java.lang.Override
@@ -2835,6 +3046,9 @@ public final class MyDataInfo {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2846,13 +3060,6 @@ public final class MyDataInfo {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
@@ -2863,6 +3070,13 @@ public final class MyDataInfo {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
               city_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -2882,6 +3096,7 @@ public final class MyDataInfo {
       return com.shengsiyuan.netty.sixthexample.MyDataInfo.internal_static_com_shengsiyuan_protobuf_Cat_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.shengsiyuan.netty.sixthexample.MyDataInfo.internal_static_com_shengsiyuan_protobuf_Cat_fieldAccessorTable
@@ -2894,12 +3109,14 @@ public final class MyDataInfo {
     private volatile java.lang.Object name_;
     /**
      * <code>optional string name = 1;</code>
+     * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>optional string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -2917,6 +3134,7 @@ public final class MyDataInfo {
     }
     /**
      * <code>optional string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -2936,12 +3154,14 @@ public final class MyDataInfo {
     private volatile java.lang.Object city_;
     /**
      * <code>optional string city = 2;</code>
+     * @return Whether the city field is set.
      */
     public boolean hasCity() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>optional string city = 2;</code>
+     * @return The city.
      */
     public java.lang.String getCity() {
       java.lang.Object ref = city_;
@@ -2959,6 +3179,7 @@ public final class MyDataInfo {
     }
     /**
      * <code>optional string city = 2;</code>
+     * @return The bytes for city.
      */
     public com.google.protobuf.ByteString
         getCityBytes() {
@@ -2975,6 +3196,7 @@ public final class MyDataInfo {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2984,26 +3206,28 @@ public final class MyDataInfo {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, city_);
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, city_);
       }
       size += unknownFields.getSerializedSize();
@@ -3011,7 +3235,6 @@ public final class MyDataInfo {
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3022,19 +3245,18 @@ public final class MyDataInfo {
       }
       com.shengsiyuan.netty.sixthexample.MyDataInfo.Cat other = (com.shengsiyuan.netty.sixthexample.MyDataInfo.Cat) obj;
 
-      boolean result = true;
-      result = result && (hasName() == other.hasName());
+      if (hasName() != other.hasName()) return false;
       if (hasName()) {
-        result = result && getName()
-            .equals(other.getName());
+        if (!getName()
+            .equals(other.getName())) return false;
       }
-      result = result && (hasCity() == other.hasCity());
+      if (hasCity() != other.hasCity()) return false;
       if (hasCity()) {
-        result = result && getCity()
-            .equals(other.getCity());
+        if (!getCity()
+            .equals(other.getCity())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -3127,6 +3349,7 @@ public final class MyDataInfo {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3134,6 +3357,7 @@ public final class MyDataInfo {
     public static Builder newBuilder(com.shengsiyuan.netty.sixthexample.MyDataInfo.Cat prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3157,6 +3381,7 @@ public final class MyDataInfo {
         return com.shengsiyuan.netty.sixthexample.MyDataInfo.internal_static_com_shengsiyuan_protobuf_Cat_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.shengsiyuan.netty.sixthexample.MyDataInfo.internal_static_com_shengsiyuan_protobuf_Cat_fieldAccessorTable
@@ -3179,6 +3404,7 @@ public final class MyDataInfo {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         name_ = "";
@@ -3188,15 +3414,18 @@ public final class MyDataInfo {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.shengsiyuan.netty.sixthexample.MyDataInfo.internal_static_com_shengsiyuan_protobuf_Cat_descriptor;
       }
 
+      @java.lang.Override
       public com.shengsiyuan.netty.sixthexample.MyDataInfo.Cat getDefaultInstanceForType() {
         return com.shengsiyuan.netty.sixthexample.MyDataInfo.Cat.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.shengsiyuan.netty.sixthexample.MyDataInfo.Cat build() {
         com.shengsiyuan.netty.sixthexample.MyDataInfo.Cat result = buildPartial();
         if (!result.isInitialized()) {
@@ -3205,15 +3434,16 @@ public final class MyDataInfo {
         return result;
       }
 
+      @java.lang.Override
       public com.shengsiyuan.netty.sixthexample.MyDataInfo.Cat buildPartial() {
         com.shengsiyuan.netty.sixthexample.MyDataInfo.Cat result = new com.shengsiyuan.netty.sixthexample.MyDataInfo.Cat(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.name_ = name_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           to_bitField0_ |= 0x00000002;
         }
         result.city_ = city_;
@@ -3222,32 +3452,39 @@ public final class MyDataInfo {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.shengsiyuan.netty.sixthexample.MyDataInfo.Cat) {
           return mergeFrom((com.shengsiyuan.netty.sixthexample.MyDataInfo.Cat)other);
@@ -3274,10 +3511,12 @@ public final class MyDataInfo {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3300,12 +3539,14 @@ public final class MyDataInfo {
       private java.lang.Object name_ = "";
       /**
        * <code>optional string name = 1;</code>
+       * @return Whether the name field is set.
        */
       public boolean hasName() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>optional string name = 1;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -3323,6 +3564,7 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional string name = 1;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -3339,6 +3581,8 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -3352,6 +3596,7 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional string name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -3361,6 +3606,8 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -3376,12 +3623,14 @@ public final class MyDataInfo {
       private java.lang.Object city_ = "";
       /**
        * <code>optional string city = 2;</code>
+       * @return Whether the city field is set.
        */
       public boolean hasCity() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>optional string city = 2;</code>
+       * @return The city.
        */
       public java.lang.String getCity() {
         java.lang.Object ref = city_;
@@ -3399,6 +3648,7 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional string city = 2;</code>
+       * @return The bytes for city.
        */
       public com.google.protobuf.ByteString
           getCityBytes() {
@@ -3415,6 +3665,8 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional string city = 2;</code>
+       * @param value The city to set.
+       * @return This builder for chaining.
        */
       public Builder setCity(
           java.lang.String value) {
@@ -3428,6 +3680,7 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional string city = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearCity() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -3437,6 +3690,8 @@ public final class MyDataInfo {
       }
       /**
        * <code>optional string city = 2;</code>
+       * @param value The bytes for city to set.
+       * @return This builder for chaining.
        */
       public Builder setCityBytes(
           com.google.protobuf.ByteString value) {
@@ -3448,11 +3703,13 @@ public final class MyDataInfo {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -3474,11 +3731,12 @@ public final class MyDataInfo {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Cat>
         PARSER = new com.google.protobuf.AbstractParser<Cat>() {
+      @java.lang.Override
       public Cat parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Cat(input, extensionRegistry);
+        return new Cat(input, extensionRegistry);
       }
     };
 
@@ -3491,6 +3749,7 @@ public final class MyDataInfo {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.shengsiyuan.netty.sixthexample.MyDataInfo.Cat getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3535,23 +3794,15 @@ public final class MyDataInfo {
       "\001(\0132\035.com.shengsiyuan.protobuf.CatH\000\"4\n\010" +
       "DataType\022\016\n\nPersonType\020\001\022\013\n\007DogType\020\002\022\013\n" +
       "\007CatType\020\003B\n\n\010dataBody\"4\n\006Person\022\014\n\004name" +
-      "\030\001 \001(\t\022\013\n\003age\030\002 \001(\005\022\017\n\007address\030\003 \001(\t\" \n\003",
+      "\030\001 \001(\t\022\013\n\003age\030\002 \001(\005\022\017\n\007address\030\003 \001(\t\" \n\003" +
       "Dog\022\014\n\004name\030\001 \001(\t\022\013\n\003age\030\002 \001(\005\"!\n\003Cat\022\014\n" +
       "\004name\030\001 \001(\t\022\014\n\004city\030\002 \001(\tB2\n\"com.shengsi" +
       "yuan.netty.sixthexampleB\nMyDataInfoH\001"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_com_shengsiyuan_protobuf_MyMessage_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_com_shengsiyuan_protobuf_MyMessage_fieldAccessorTable = new

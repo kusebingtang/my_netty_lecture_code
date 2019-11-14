@@ -19,38 +19,46 @@ public final class DataInfo {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
+     * @return Whether the name field is set.
      */
     boolean hasName();
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
+     * @return The name.
      */
     java.lang.String getName();
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
      * <code>optional int32 age = 2;</code>
+     * @return Whether the age field is set.
      */
     boolean hasAge();
     /**
      * <code>optional int32 age = 2;</code>
+     * @return The age.
      */
     int getAge();
 
     /**
      * <code>optional string address = 3;</code>
+     * @return Whether the address field is set.
      */
     boolean hasAddress();
     /**
      * <code>optional string address = 3;</code>
+     * @return The address.
      */
     java.lang.String getAddress();
     /**
      * <code>optional string address = 3;</code>
+     * @return The bytes for address.
      */
     com.google.protobuf.ByteString
         getAddressBytes();
@@ -62,14 +70,21 @@ public final class DataInfo {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:com.shengsiyuan.protobuf.Student)
       StudentOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Student.newBuilder() to construct.
     private Student(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
     private Student() {
       name_ = "";
-      age_ = 0;
       address_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Student();
     }
 
     @java.lang.Override
@@ -82,6 +97,9 @@ public final class DataInfo {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -93,13 +111,6 @@ public final class DataInfo {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000001;
@@ -115,6 +126,13 @@ public final class DataInfo {
               com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
               address_ = bs;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -134,6 +152,7 @@ public final class DataInfo {
       return com.shengsiyuan.protobuf.DataInfo.internal_static_com_shengsiyuan_protobuf_Student_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.shengsiyuan.protobuf.DataInfo.internal_static_com_shengsiyuan_protobuf_Student_fieldAccessorTable
@@ -145,13 +164,15 @@ public final class DataInfo {
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
+     * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
+     * @return The name.
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -168,7 +189,8 @@ public final class DataInfo {
       }
     }
     /**
-     * <code>required string name = 1;</code>
+     * <code>optional string name = 1;</code>
+     * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -188,12 +210,14 @@ public final class DataInfo {
     private int age_;
     /**
      * <code>optional int32 age = 2;</code>
+     * @return Whether the age field is set.
      */
     public boolean hasAge() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>optional int32 age = 2;</code>
+     * @return The age.
      */
     public int getAge() {
       return age_;
@@ -203,12 +227,14 @@ public final class DataInfo {
     private volatile java.lang.Object address_;
     /**
      * <code>optional string address = 3;</code>
+     * @return Whether the address field is set.
      */
     public boolean hasAddress() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>optional string address = 3;</code>
+     * @return The address.
      */
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
@@ -226,6 +252,7 @@ public final class DataInfo {
     }
     /**
      * <code>optional string address = 3;</code>
+     * @return The bytes for address.
      */
     public com.google.protobuf.ByteString
         getAddressBytes() {
@@ -242,46 +269,45 @@ public final class DataInfo {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasName()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       memoizedIsInitialized = 1;
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeInt32(2, age_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, address_);
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, age_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, address_);
       }
       size += unknownFields.getSerializedSize();
@@ -289,7 +315,6 @@ public final class DataInfo {
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -300,24 +325,23 @@ public final class DataInfo {
       }
       com.shengsiyuan.protobuf.DataInfo.Student other = (com.shengsiyuan.protobuf.DataInfo.Student) obj;
 
-      boolean result = true;
-      result = result && (hasName() == other.hasName());
+      if (hasName() != other.hasName()) return false;
       if (hasName()) {
-        result = result && getName()
-            .equals(other.getName());
+        if (!getName()
+            .equals(other.getName())) return false;
       }
-      result = result && (hasAge() == other.hasAge());
+      if (hasAge() != other.hasAge()) return false;
       if (hasAge()) {
-        result = result && (getAge()
-            == other.getAge());
+        if (getAge()
+            != other.getAge()) return false;
       }
-      result = result && (hasAddress() == other.hasAddress());
+      if (hasAddress() != other.hasAddress()) return false;
       if (hasAddress()) {
-        result = result && getAddress()
-            .equals(other.getAddress());
+        if (!getAddress()
+            .equals(other.getAddress())) return false;
       }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
     }
 
     @java.lang.Override
@@ -414,6 +438,7 @@ public final class DataInfo {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -421,6 +446,7 @@ public final class DataInfo {
     public static Builder newBuilder(com.shengsiyuan.protobuf.DataInfo.Student prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -444,6 +470,7 @@ public final class DataInfo {
         return com.shengsiyuan.protobuf.DataInfo.internal_static_com_shengsiyuan_protobuf_Student_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.shengsiyuan.protobuf.DataInfo.internal_static_com_shengsiyuan_protobuf_Student_fieldAccessorTable
@@ -466,6 +493,7 @@ public final class DataInfo {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         name_ = "";
@@ -477,15 +505,18 @@ public final class DataInfo {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return com.shengsiyuan.protobuf.DataInfo.internal_static_com_shengsiyuan_protobuf_Student_descriptor;
       }
 
+      @java.lang.Override
       public com.shengsiyuan.protobuf.DataInfo.Student getDefaultInstanceForType() {
         return com.shengsiyuan.protobuf.DataInfo.Student.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.shengsiyuan.protobuf.DataInfo.Student build() {
         com.shengsiyuan.protobuf.DataInfo.Student result = buildPartial();
         if (!result.isInitialized()) {
@@ -494,19 +525,20 @@ public final class DataInfo {
         return result;
       }
 
+      @java.lang.Override
       public com.shengsiyuan.protobuf.DataInfo.Student buildPartial() {
         com.shengsiyuan.protobuf.DataInfo.Student result = new com.shengsiyuan.protobuf.DataInfo.Student(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+        if (((from_bitField0_ & 0x00000001) != 0)) {
           to_bitField0_ |= 0x00000001;
         }
         result.name_ = name_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.age_ = age_;
           to_bitField0_ |= 0x00000002;
         }
-        result.age_ = age_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           to_bitField0_ |= 0x00000004;
         }
         result.address_ = address_;
@@ -515,32 +547,39 @@ public final class DataInfo {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
-        return (Builder) super.clone();
+        return super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.setField(field, value);
+          java.lang.Object value) {
+        return super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
+        return super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
+        return super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
-        return (Builder) super.addRepeatedField(field, value);
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.shengsiyuan.protobuf.DataInfo.Student) {
           return mergeFrom((com.shengsiyuan.protobuf.DataInfo.Student)other);
@@ -570,13 +609,12 @@ public final class DataInfo {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
-        if (!hasName()) {
-          return false;
-        }
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -598,13 +636,15 @@ public final class DataInfo {
 
       private java.lang.Object name_ = "";
       /**
-       * <code>required string name = 1;</code>
+       * <code>optional string name = 1;</code>
+       * @return Whether the name field is set.
        */
       public boolean hasName() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>optional string name = 1;</code>
+       * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -621,7 +661,8 @@ public final class DataInfo {
         }
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>optional string name = 1;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -637,7 +678,9 @@ public final class DataInfo {
         }
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>optional string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
@@ -650,7 +693,8 @@ public final class DataInfo {
         return this;
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>optional string name = 1;</code>
+       * @return This builder for chaining.
        */
       public Builder clearName() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -659,7 +703,9 @@ public final class DataInfo {
         return this;
       }
       /**
-       * <code>required string name = 1;</code>
+       * <code>optional string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -675,18 +721,22 @@ public final class DataInfo {
       private int age_ ;
       /**
        * <code>optional int32 age = 2;</code>
+       * @return Whether the age field is set.
        */
       public boolean hasAge() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>optional int32 age = 2;</code>
+       * @return The age.
        */
       public int getAge() {
         return age_;
       }
       /**
        * <code>optional int32 age = 2;</code>
+       * @param value The age to set.
+       * @return This builder for chaining.
        */
       public Builder setAge(int value) {
         bitField0_ |= 0x00000002;
@@ -696,6 +746,7 @@ public final class DataInfo {
       }
       /**
        * <code>optional int32 age = 2;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAge() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -707,12 +758,14 @@ public final class DataInfo {
       private java.lang.Object address_ = "";
       /**
        * <code>optional string address = 3;</code>
+       * @return Whether the address field is set.
        */
       public boolean hasAddress() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>optional string address = 3;</code>
+       * @return The address.
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -730,6 +783,7 @@ public final class DataInfo {
       }
       /**
        * <code>optional string address = 3;</code>
+       * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -746,6 +800,8 @@ public final class DataInfo {
       }
       /**
        * <code>optional string address = 3;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -759,6 +815,7 @@ public final class DataInfo {
       }
       /**
        * <code>optional string address = 3;</code>
+       * @return This builder for chaining.
        */
       public Builder clearAddress() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -768,6 +825,8 @@ public final class DataInfo {
       }
       /**
        * <code>optional string address = 3;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -779,11 +838,13 @@ public final class DataInfo {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
@@ -805,11 +866,12 @@ public final class DataInfo {
 
     @java.lang.Deprecated public static final com.google.protobuf.Parser<Student>
         PARSER = new com.google.protobuf.AbstractParser<Student>() {
+      @java.lang.Override
       public Student parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Student(input, extensionRegistry);
+        return new Student(input, extensionRegistry);
       }
     };
 
@@ -822,6 +884,7 @@ public final class DataInfo {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.shengsiyuan.protobuf.DataInfo.Student getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -843,22 +906,14 @@ public final class DataInfo {
   static {
     java.lang.String[] descriptorData = {
       "\n\032src/protobuf/Student.proto\022\030com.shengs" +
-      "iyuan.protobuf\"5\n\007Student\022\014\n\004name\030\001 \002(\t\022" +
+      "iyuan.protobuf\"5\n\007Student\022\014\n\004name\030\001 \001(\t\022" +
       "\013\n\003age\030\002 \001(\005\022\017\n\007address\030\003 \001(\tB&\n\030com.she" +
       "ngsiyuan.protobufB\010DataInfoH\001"
     };
-    com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
-          public com.google.protobuf.ExtensionRegistry assignDescriptors(
-              com.google.protobuf.Descriptors.FileDescriptor root) {
-            descriptor = root;
-            return null;
-          }
-        };
-    com.google.protobuf.Descriptors.FileDescriptor
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+        });
     internal_static_com_shengsiyuan_protobuf_Student_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_com_shengsiyuan_protobuf_Student_fieldAccessorTable = new
