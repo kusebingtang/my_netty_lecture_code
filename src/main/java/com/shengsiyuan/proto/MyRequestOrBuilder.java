@@ -9,10 +9,12 @@ public interface MyRequestOrBuilder extends
 
   /**
    * <code>string username = 1;</code>
+   * @return The username.
    */
   java.lang.String getUsername();
   /**
    * <code>string username = 1;</code>
+   * @return The bytes for username.
    */
   com.google.protobuf.ByteString
       getUsernameBytes();

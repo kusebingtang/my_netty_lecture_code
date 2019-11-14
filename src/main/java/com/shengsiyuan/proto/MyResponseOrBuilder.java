@@ -9,10 +9,12 @@ public interface MyResponseOrBuilder extends
 
   /**
    * <code>string realname = 2;</code>
+   * @return The realname.
    */
   java.lang.String getRealname();
   /**
    * <code>string realname = 2;</code>
+   * @return The bytes for realname.
    */
   com.google.protobuf.ByteString
       getRealnameBytes();

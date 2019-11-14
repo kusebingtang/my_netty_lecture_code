@@ -10,6 +10,7 @@ public  final class MyResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:com.shengsiyuan.proto.MyResponse)
     MyResponseOrBuilder {
+private static final long serialVersionUID = 0L;
   // Use MyResponse.newBuilder() to construct.
   private MyResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -19,16 +20,27 @@ public  final class MyResponse extends
   }
 
   @java.lang.Override
+  @SuppressWarnings({"unused"})
+  protected java.lang.Object newInstance(
+      UnusedPrivateParameter unused) {
+    return new MyResponse();
+  }
+
+  @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    return this.unknownFields;
   }
   private MyResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    int mutable_bitField0_ = 0;
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
+    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -37,16 +49,17 @@ public  final class MyResponse extends
           case 0:
             done = true;
             break;
-          default: {
-            if (!input.skipField(tag)) {
-              done = true;
-            }
-            break;
-          }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
             realname_ = s;
+            break;
+          }
+          default: {
+            if (!parseUnknownField(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -57,6 +70,7 @@ public  final class MyResponse extends
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -65,6 +79,7 @@ public  final class MyResponse extends
     return com.shengsiyuan.proto.StudentProto.internal_static_com_shengsiyuan_proto_MyResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.shengsiyuan.proto.StudentProto.internal_static_com_shengsiyuan_proto_MyResponse_fieldAccessorTable
@@ -76,6 +91,7 @@ public  final class MyResponse extends
   private volatile java.lang.Object realname_;
   /**
    * <code>string realname = 2;</code>
+   * @return The realname.
    */
   public java.lang.String getRealname() {
     java.lang.Object ref = realname_;
@@ -91,6 +107,7 @@ public  final class MyResponse extends
   }
   /**
    * <code>string realname = 2;</code>
+   * @return The bytes for realname.
    */
   public com.google.protobuf.ByteString
       getRealnameBytes() {
@@ -107,6 +124,7 @@ public  final class MyResponse extends
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -116,13 +134,16 @@ public  final class MyResponse extends
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getRealnameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, realname_);
     }
+    unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -131,11 +152,11 @@ public  final class MyResponse extends
     if (!getRealnameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, realname_);
     }
+    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
-  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -146,10 +167,10 @@ public  final class MyResponse extends
     }
     com.shengsiyuan.proto.MyResponse other = (com.shengsiyuan.proto.MyResponse) obj;
 
-    boolean result = true;
-    result = result && getRealname()
-        .equals(other.getRealname());
-    return result;
+    if (!getRealname()
+        .equals(other.getRealname())) return false;
+    if (!unknownFields.equals(other.unknownFields)) return false;
+    return true;
   }
 
   @java.lang.Override
@@ -166,6 +187,17 @@ public  final class MyResponse extends
     return hash;
   }
 
+  public static com.shengsiyuan.proto.MyResponse parseFrom(
+      java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data);
+  }
+  public static com.shengsiyuan.proto.MyResponse parseFrom(
+      java.nio.ByteBuffer data,
+      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws com.google.protobuf.InvalidProtocolBufferException {
+    return PARSER.parseFrom(data, extensionRegistry);
+  }
   public static com.shengsiyuan.proto.MyResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -225,6 +257,7 @@ public  final class MyResponse extends
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -232,6 +265,7 @@ public  final class MyResponse extends
   public static Builder newBuilder(com.shengsiyuan.proto.MyResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -255,6 +289,7 @@ public  final class MyResponse extends
       return com.shengsiyuan.proto.StudentProto.internal_static_com_shengsiyuan_proto_MyResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.shengsiyuan.proto.StudentProto.internal_static_com_shengsiyuan_proto_MyResponse_fieldAccessorTable
@@ -277,6 +312,7 @@ public  final class MyResponse extends
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       realname_ = "";
@@ -284,15 +320,18 @@ public  final class MyResponse extends
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.shengsiyuan.proto.StudentProto.internal_static_com_shengsiyuan_proto_MyResponse_descriptor;
     }
 
+    @java.lang.Override
     public com.shengsiyuan.proto.MyResponse getDefaultInstanceForType() {
       return com.shengsiyuan.proto.MyResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.shengsiyuan.proto.MyResponse build() {
       com.shengsiyuan.proto.MyResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -301,6 +340,7 @@ public  final class MyResponse extends
       return result;
     }
 
+    @java.lang.Override
     public com.shengsiyuan.proto.MyResponse buildPartial() {
       com.shengsiyuan.proto.MyResponse result = new com.shengsiyuan.proto.MyResponse(this);
       result.realname_ = realname_;
@@ -308,32 +348,39 @@ public  final class MyResponse extends
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
-      return (Builder) super.clone();
+      return super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.setField(field, value);
+        java.lang.Object value) {
+      return super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return (Builder) super.clearField(field);
+      return super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return (Builder) super.clearOneof(oneof);
+      return super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, Object value) {
-      return (Builder) super.setRepeatedField(field, index, value);
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        Object value) {
-      return (Builder) super.addRepeatedField(field, value);
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.shengsiyuan.proto.MyResponse) {
         return mergeFrom((com.shengsiyuan.proto.MyResponse)other);
@@ -349,14 +396,17 @@ public  final class MyResponse extends
         realname_ = other.realname_;
         onChanged();
       }
+      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -378,6 +428,7 @@ public  final class MyResponse extends
     private java.lang.Object realname_ = "";
     /**
      * <code>string realname = 2;</code>
+     * @return The realname.
      */
     public java.lang.String getRealname() {
       java.lang.Object ref = realname_;
@@ -393,6 +444,7 @@ public  final class MyResponse extends
     }
     /**
      * <code>string realname = 2;</code>
+     * @return The bytes for realname.
      */
     public com.google.protobuf.ByteString
         getRealnameBytes() {
@@ -409,6 +461,8 @@ public  final class MyResponse extends
     }
     /**
      * <code>string realname = 2;</code>
+     * @param value The realname to set.
+     * @return This builder for chaining.
      */
     public Builder setRealname(
         java.lang.String value) {
@@ -422,6 +476,7 @@ public  final class MyResponse extends
     }
     /**
      * <code>string realname = 2;</code>
+     * @return This builder for chaining.
      */
     public Builder clearRealname() {
       
@@ -431,6 +486,8 @@ public  final class MyResponse extends
     }
     /**
      * <code>string realname = 2;</code>
+     * @param value The bytes for realname to set.
+     * @return This builder for chaining.
      */
     public Builder setRealnameBytes(
         com.google.protobuf.ByteString value) {
@@ -443,14 +500,16 @@ public  final class MyResponse extends
       onChanged();
       return this;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.setUnknownFields(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return this;
+      return super.mergeUnknownFields(unknownFields);
     }
 
 
@@ -469,11 +528,12 @@ public  final class MyResponse extends
 
   private static final com.google.protobuf.Parser<MyResponse>
       PARSER = new com.google.protobuf.AbstractParser<MyResponse>() {
+    @java.lang.Override
     public MyResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MyResponse(input, extensionRegistry);
+      return new MyResponse(input, extensionRegistry);
     }
   };
 
@@ -486,6 +546,7 @@ public  final class MyResponse extends
     return PARSER;
   }
 
+  @java.lang.Override
   public com.shengsiyuan.proto.MyResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
