@@ -5,6 +5,8 @@ import com.shengsiyuan.proto.*;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
+import java.util.Iterator;
+
 
 public class GrpcClient {
 
@@ -19,5 +21,14 @@ public class GrpcClient {
                 getRealNameByUsername(MyRequest.newBuilder().setUsername("zhangsan").build());
 
         System.out.println(myResponse.getRealname());
+
+        System.out.println("---------------------------------");
+        Iterator<StudentResponse> iterator = blockingStub.getStudentsByAge(StudentRequest.newBuilder().setAge(20).buildPartial());
+
+        while (iterator.hasNext()) {
+            StudentResponse studentResponse = iterator.next();
+            System.out.println(studentResponse.getName() + ", " + studentResponse.getAge() + ", " + studentResponse.getCity());
+        }
+
     }
 }
